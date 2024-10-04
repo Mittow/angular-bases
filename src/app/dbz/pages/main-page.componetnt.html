@@ -1,0 +1,34 @@
+<h1>DBZ Personajes</h1>
+<hr />
+
+<div class="row">
+
+  <div class="col">
+    <!-- Componente Hijo -->
+    <!-- <dbz-list [characterList]="dbzService.characters"
+      (onDeleted)="dbzService.onDeleteCharacter($event)"></dbz-list> -->
+    <dbz-list [characterList]="characters"
+    (onDeleted)="onDeleteCharacter($event)"></dbz-list>
+  </div>
+
+  <div class="col">
+    <!-- Componente Hijo -->
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+  </div>
+
+</div>
+
+<!--
+
+NOTA:
+
+  [characterList]="characters" => Provee de datos al componente hijo mediante en Input.
+
+  (onDeleted)="onDeleteCharacter($event)" => Para recibir el evento.
+
+  "$event" => Es el valor emitido desde el componente hijo mediante el evento.
+
+  "(onDeleted)" => Es el nombre del evento emitido, osea es el nombre de la variable @Output
+  que se encuentra en el componente hijo.
+
+-->
